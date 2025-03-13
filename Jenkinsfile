@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ -o PES2UG22CS355-1 hello.cpp' // Compile main.cpp
+                    sh 'g++ -o main/PES2UG22CS355 main/hello.cpp' // Compile hello.cpp
                 }
             }
         }
@@ -13,14 +13,14 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './PES2UG22CS355' // Run compiled output
+                    sh './main/PES2UG22CS355' // Run the compiled executable
                 }
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying application' // Simulate deployment
+                echo 'Deploying application...' // Simulate deployment
             }
         }
     }
